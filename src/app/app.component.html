@@ -10,6 +10,30 @@
   </nav>
 </div>
 
+<p>
+  <span tooltip="toolTipContent" #popa="bs-tooltip">
+    This text has attached tooltip
+  </span>
+  <span tooltip="Hello there! I was triggered manually" #popb="bs-tooltip">
+    This text has attached tooltip
+  </span>
+</p>
+   
+<button type="button" class="btn btn-success" (click)="myToggle(popa)">
+  toggle
+</button>
+
+<button type="button" class="btn btn-success" (click)="popa.show(); popb.hide()">
+  toggle
+</button>
+
+<button type="button" class="btn btn-success" (click)="popb.show(); popa.hide()">
+  toggle
+</button>
+  
+
 <router-outlet></router-outlet>
 
 <app-messages></app-messages>
+
+https://stackblitz.com/edit/angular-zkw9mz?file=app%2Ffour-directions.ts

@@ -9,4 +9,15 @@ import { MessagesComponent } from './messages/messages.component';
 
 export class AppComponent {
   title = 'Welcome to my Lighthouse';
+  showToolTip: boolean = false
+  toolTipContent: string = "message"
+
+  myToggle(tip) {
+    this.showToolTip = !this.showToolTip
+    if (tip.isOpen) {
+      tip.hide()
+    } else {
+      tip.show()
+    }
+  }
 }
