@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CaptainsComponent } from './captains/captains.component';
 import { CaptainDetailComponent } from './captain-detail/captain-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CaptainsComponent,
-    CaptainDetailComponent
+    CaptainDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
