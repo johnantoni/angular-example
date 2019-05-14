@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CaptainService } from '../captain.service'
 import { Captain } from './captain'
-import { CAPTAINS } from './mock-captains'
 
 @Component({
   selector: 'app-captains',
@@ -9,18 +9,23 @@ import { CAPTAINS } from './mock-captains'
 })
 export class CaptainsComponent implements OnInit {
 
-  captains = CAPTAINS
-
+  captains: Captain[];
   selectedCaptain: Captain;
+
+  constructor(private captainService: CaptainService) { }
+
+  getCaptains(): void {
+    this.captainService.getCaptains()
+      .subscribe(captains => this.captains = captains)
+  }
 
   onSelect(captain: Captain): void {
     this.selectedCaptain = captain;
   }
 
-  constructor() { }
-
   ngOnInit() {
     // initialisation logic (aka componentDidMount)
+    this.getCaptains()
   }
 
 }
