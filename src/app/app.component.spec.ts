@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { CaptainsComponent } from "./captains/captains.component";
+import { CaptainDetailComponent } from "./captain-detail/captain-detail.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,7 +14,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        CaptainsComponent
+        CaptainsComponent,
+        CaptainDetailComponent
       ],
     }).compileComponents();
   }));

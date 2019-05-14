@@ -10,12 +10,4 @@
   </li>
 </ul>
 
-<div *ngIf="selectedCaptain">
-  <div>
-    <h2>Edit Captain</h2>
-    <h3>{{selectedCaptain.name}}</h3>
-    <label>Name:
-      <input [(ngModel)]="selectedCaptain.name" placeholder="New Captain?"/>
-    </label>
-  </div>
-</div>
+<app-captain-detail [captain]="selectedCaptain"></app-captain-detail>

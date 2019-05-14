@@ -1,0 +1,9 @@
+<div *ngIf="captain">
+  <div>
+    <h2>Edit Captain</h2>
+    <h3>{{captain.name}}</h3>
+    <label>Name:
+      <input [(ngModel)]="captain.name" placeholder="New Captain?"/>
+    </label>
+  </div>
+</div>
