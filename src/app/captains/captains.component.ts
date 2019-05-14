@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CaptainService } from '../captain.service'
 import { Captain } from './captain'
-
 @Component({
   selector: 'app-captains',
   templateUrl: './captains.component.html',
