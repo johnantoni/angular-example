@@ -1,11 +1,21 @@
-<h2>{{captain.name | uppercase}} Details</h2>
-<div>
-  <p>ID: {{captain.id}}</p>
-  <p>Name: {{captain.name}}</p>
-</div>
+<h2>Lighthouse Captains</h2>
 
-<div>
-  <label>name:
-    <input [(ngModel)]="captain.name" placeholder="Your Name?"/>
-  </label>
+<ul>
+  <li *ngFor="let captain of captains" 
+    [class.selected]="captain === selectedCaptain"
+    (click)="onSelect(captain)">
+    <p>
+      {{captain.id}} <strong>{{captain.name}}</strong> 
+    </p>
+  </li>
+</ul>
+
+<div *ngIf="selectedCaptain">
+  <div>
+    <h2>Edit Captain</h2>
+    <h3>{{selectedCaptain.name}}</h3>
+    <label>Name:
+      <input [(ngModel)]="selectedCaptain.name" placeholder="New Captain?"/>
+    </label>
+  </div>
 </div>

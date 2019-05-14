@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Captain } from './captain'
+import { CAPTAINS } from './mock-captains'
 
 @Component({
   selector: 'app-captains',
@@ -7,9 +8,13 @@ import { Captain } from './captain'
   styleUrls: ['./captains.component.scss']
 })
 export class CaptainsComponent implements OnInit {
-  captain: Captain = {
-    id: 1,
-    name: "Richard Basehart"
+
+  captains = CAPTAINS
+
+  selectedCaptain: Captain;
+
+  onSelect(captain: Captain): void {
+    this.selectedCaptain = captain;
   }
 
   constructor() { }
